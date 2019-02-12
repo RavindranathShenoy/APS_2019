@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+
+int kadane (int a[],int n)
+{
+    int max=0,tmax=0,i;
+    for(i=0;i<n;i++)
+    {
+        tmax=tmax+a[i];
+        if(tmax<0){tmax=0;}
+
+        if(max<tmax){max=tmax;
+        }
+
+    }
+    return max;
+}
+
+int main()
+{
+
+    int a[100],n,i;
+    printf("enter n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {scanf("%d",&a[i]);
+    }
+    int max=kadane(a,n);
+    printf("max is %d",max);
+    return 0;
+}
