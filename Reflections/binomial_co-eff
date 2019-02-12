@@ -1,0 +1,10 @@
+Basically there are two ways of getting this done
+1.By recursive approach
+2.By dynamic progrmming
+
+  By reursive approach although the code is small but it is more time consuming,memory consuming because for every iteration new variabes created.
+  
+  By dynamic programming aproach each value is computed and stored in a table .Those values can be reused again which is again not possibe in recursive way
+  
+  Also , a variant of Dynamic programming is used where it uses 1D array to store values of ony those iterations that is asked .
+  it can be used when we require particular bc and cannot obtain previous .
