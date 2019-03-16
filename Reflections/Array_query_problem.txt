@@ -1,0 +1,21 @@
+Array querying Techniques
+1.Look up table:
+   -> Time complexity for processing table O(n^2)
+   -> Space complexity is O(n^2)
+   -> Time for fetching the value O(1)
+  
+  
+  
+2.Square Root Decomposition:
+   -> Time complexity for pre-processing O(n)
+   -> Space complexity is O(n)
+   -> Time for fetching the value O(root(n))
+  
+
+3.Segment Tree:
+    -> Bottom Up binary tree approach widely used when huge number of data is present
+    -> Time complexity for tree building O(nlogn)
+    -> Space complexity is O(nlogn)
+    -> Time for fetching the value O(logn)
+    
+  
