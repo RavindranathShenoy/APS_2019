@@ -1,0 +1,118 @@
+/* The pre-order and post order of nodes using DfS*/
+
+#include<stdio.h>
+#include<stdio.h>
+
+
+int v = 6;
+
+
+    int m[10][10] =
+
+                    {
+
+                        {0, 1, 1, 1, 0, 0},
+
+                        {1, 0, 0, 0, 0, 0},
+
+                        {1, 0, 0, 1, 0, 0},
+
+                        {1, 0, 1, 0, 0, 0},
+
+                        {0, 0, 0, 0, 0, 1},
+
+                        {0, 0, 0, 0, 1, 0}
+
+
+
+
+
+
+
+                    };
+
+
+
+int source = 0;
+
+
+int visited[10];
+int arr[10];
+int brr[10];
+
+
+
+int cnt=2;
+
+void check()
+{
+    int i=0;
+    for(i=0;i<6;i++)
+    {
+
+        if(visited[i]==0)
+        {
+            printf("i is %d   ",i);
+            arr[i]=cnt;
+            cnt++;
+           dfs(m,v,i);
+           brr[i]=cnt;
+           cnt++;
+    }
+}
+}
+
+void dfs(int m[10][10], int v, int source)
+{
+
+    int i;
+    visited[source] = 1;
+
+    for(i=0; i<v; i++)
+    {
+
+        if(m[source][i] == 1 && visited[i] == 0)
+        {
+            arr[i]=cnt;
+
+            cnt++;
+            printf("%d\t ",i);
+
+            dfs(m, v, i);
+            brr[i]=cnt;
+
+            cnt++;
+        }
+
+
+    }
+
+}
+
+
+
+int main()
+{
+    int i,j;
+    for (i= 0; i < v; i ++)
+        visited[i] = 0;
+
+
+    dfs(m, v, source);
+
+    arr[0]=1;
+    brr[0]=cnt;
+    cnt++;
+    check();
+    printf("%d\n",cnt);
+    printf("Pre-order   Post-order\n");
+    for(j=0;j<6;j++)
+    {
+
+        printf("%d\t%d\n",arr[j],brr[j]);
+
+    }
+
+    return 0;
+
+}
